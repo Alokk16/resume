@@ -1,17 +1,83 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-body {
-  font-family: 'Arial', sans-serif;
-  background: #f0f2f5;
-  margin: 0;
-  padding: 0;
+// @import "~ng-zorro-antd/ng-zorro-antd.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+
+  // font-family: "Lato", sans-serif;
+  //   font-family: "RigSans";
+}
+@font-face {
+  font-family: "RigSans";
+  font-weight: normal;
+  src: url("/fonts/RigRegular.otf") format("opentype");
+}
+@font-face {
+  font-family: "RigSansBold";
+  font-weight: 500;
+  src: url("/fonts/RigBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "RigSansBoldItalic";
+  src: url("/fonts/RigBoldItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "RigSansLightItalic";
+  src: url("/fonts/RigLightItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "RigSansMedium";
+  src: url("/fonts/RigMedium.otf") format("opentype");
+}
+
+button {
+  // border: none;
+  outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 77, 139);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3d3c3c;
+}
+
+// .custom-divider {
+//   border: 1px solid rgb(230, 228, 228);
+//   border-radius: 0px;
+// }
