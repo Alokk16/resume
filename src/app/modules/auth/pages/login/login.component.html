@@ -1,0 +1,68 @@
+<section class="flex justify-center items-center h-screen">
+  <form
+    nz-form
+    [formGroup]="loginForm"
+    class="login-form"
+    (ngSubmit)="submitForm()"
+  >
+    <div>
+      <h1 class="text-3xl font-bold text-center">Log in</h1>
+    </div>
+    <nz-form-item class="my-4">
+      <nz-form-control nzErrorTip="Enter email!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            type="text"
+            nz-input
+            formControlName="userName"
+            placeholder="Email"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item class="my-4">
+      <nz-form-control nzErrorTip="Enter Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            type="password"
+            nz-input
+            formControlName="password"
+            placeholder="Password"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+
+    <div nz-row class="login-form-margin">
+      <div nz-col [nzSpan]="12">
+        <label nz-checkbox formControlName="remember">
+          <span>Remember me</span>
+        </label>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <a class="login-form-forgot">Forgot password</a>
+      </div>
+    </div>
+
+    <button
+      nz-button
+      class="login-form-button login-form-margin"
+      [nzType]="'primary'"
+    >
+      Log in
+    </button>
+    <div class="btn-group">
+      <button (click)="login()" type="button" class="login-with-google-btn">
+        <span nz-icon nzType="google" nzTheme="outline"></span>
+        Continue with google
+      </button>
+    </div>
+
+    <div nz-row class="login-form-margin">
+      <div nz-col>
+        <a class="login-form-forgot" routerLink="/auth/register"> Register </a>
+      </div>
+    </div>
+  </form>
+</section>
